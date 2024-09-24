@@ -104,7 +104,7 @@ function AreaDoQuadrado(lado){
 }
 
 function AreaDoTrapezio(baseMaior, baseMenor, altura){
-return (baseMaior + baseMenor) *altura/2
+return parseFloat(baseMaior + baseMenor) *altura/2
 }
 
 function AreaDoCirculo(raio){
@@ -135,8 +135,8 @@ function askForOptions(){
         alert('A area do quadrado eh de ' + AreaDoQuadrado(ladoQuadrado) );
         break;
       case 'D':
-        let baseMaiorDoTrapezio = prompt('Insira a base maior do trapezio')  
-        let baseMenorDoTrapezio = prompt('Insira a base menor do trapezio')
+        let baseMaiorDoTrapezio =parseFloat(prompt('Insira a base maior do trapezio') ) 
+        let baseMenorDoTrapezio = parseFloat(prompt('Insira a base menor do trapezio'))
         let alturaDoTrapezio = prompt('Insira a altura do trapezio')
         alert('A area do trapezio eh de ' + AreaDoTrapezio(baseMaiorDoTrapezio, baseMenorDoTrapezio, alturaDoTrapezio));
         break;
