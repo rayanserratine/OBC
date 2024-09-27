@@ -90,75 +90,87 @@
 
 
 
-function AreaDoTriangulo(base, altura){
+function AreaDoTriangulo(){
+const base = prompt('Informe a base do triangulo')
+const altura = prompt('Informe a altura do triangulo')
 return  base * altura/2
 }
 
 
-function AreaDoRetangulo(base, altura){
+function AreaDoRetangulo(){
+  const base = prompt('Informe a base do retangulo')
+  const altura = prompt('Informe a altura do retangulo')
     return base * altura
 }
 
-function AreaDoQuadrado(lado){
+function AreaDoQuadrado(){
+  const lado = prompt('Informe o lado do quadrado')
     return lado * lado
 }
 
-function AreaDoTrapezio(baseMaior, baseMenor, altura){
-return parseFloat(baseMaior + baseMenor) *altura/2
+function AreaDoTrapezio(){
+  const baseMaior = parseFloat(prompt('Informe a base maior do trapezio'))
+  const baseMenor = parseFloat(prompt('Informe a base menor do trapezio'))
+  const altura = prompt('Informe a altura do trapezio')
+return (baseMaior + baseMenor) *altura/2
 }
 
-function AreaDoCirculo(raio){
+function AreaDoCirculo(){
+  const raio = prompt('Informe o raio do circulo')
 return 3.14 * (raio * raio)
 }
 
 let option = ''
 
-function askForOptions(){
-    do{
-  option = prompt('Ola, oq voce deseja fazer? \n\n A.Calcular area do triangulo \n B.Calcular area do retangulo' +
-        '\nC.Calcular area do quadrado \nD.Calcular area do trapezio \nE.Calcular area do circulo \nF.Sair'
-    )
-    switch(option){
-      case 'A':
-        let baseTriangulo = prompt('Insira a base do triangulo')
-        let alturaTriangulo = prompt('Insira a altura do triangulo')
-        alert('A area do triangulo eh de ' + AreaDoTriangulo(baseTriangulo, alturaTriangulo));
-      
-        break;
-      case 'B':
-        let baseRetangulo = prompt('Insira a base do retangulo')
-        let alturaRetangulo = prompt('Insira a altura do retangulo')
-        alert('A area do retangulo eh de ' + AreaDoRetangulo(baseRetangulo, alturaRetangulo));
-        break;
-      case 'C':
-        let ladoQuadrado = prompt('Insira o lado do quadrado')
-        alert('A area do quadrado eh de ' + AreaDoQuadrado(ladoQuadrado) );
-        break;
-      case 'D':
-        let baseMaiorDoTrapezio =parseFloat(prompt('Insira a base maior do trapezio') ) 
-        let baseMenorDoTrapezio = parseFloat(prompt('Insira a base menor do trapezio'))
-        let alturaDoTrapezio = prompt('Insira a altura do trapezio')
-        alert('A area do trapezio eh de ' + AreaDoTrapezio(baseMaiorDoTrapezio, baseMenorDoTrapezio, alturaDoTrapezio));
-        break;
-      case 'E':
-        let raioDoCirculo = prompt('Insira o raio do circulo')
-        alert('A area do circulo eh de ' + AreaDoCirculo(raioDoCirculo));
-        break;
-      case 'F':
-        alert('Saindo...');
-        break;
-      default:
-        alert('Invalid option');
-
-    }
-}while (option != 'F')
+function Menu(){
+option = prompt(
+    '1.Calcular area do triangulo\n' +
+    '2.Calcular area do retangulo\n' +
+    '3.Calcular area do quadrado\n' +
+    '4.Calcular area do trapezio\n' +
+    '5.Calcular area do circulo\n' +
+    '6.Sair' 
+  )
+  return option;
 }
+
+
+function calcular(){
+let result = ''
+do{
+  
+   const selectedOption = Menu()
+  switch (selectedOption){
+
+    case '1':
+      result = alert('O resultado da area do triangulo eh de ' + AreaDoTriangulo())
+      break;
+
+    case '2':
+      result = alert('O resultado da area do retangulo eh de ' + AreaDoRetangulo())
+      break;
+
+    case '3':
+      result = alert('O resultado da area do quadrado eh de ' + AreaDoQuadrado())
+      break;
+
+    case '4':
+      result = alert('O resultado da area do trapezio eh de ' + AreaDoTrapezio())
+      break;
+
+    case '5':
+      result = alert('O resultado da area do circulo eh de ' + AreaDoCirculo())
+      break;
     
+    case '6':
+      alert('Saindo...')
+      break;
 
-askForOptions()
+    default:
+      alert('Invalid option')
+      
+   }
+}while(option !== '6')
+}
 
-
-        
-
-   
-
+calcular()
