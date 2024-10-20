@@ -31,9 +31,13 @@ function show(user){
     alert('Usuario: \n' + 'Nome: ' + user.name + '\n Idade: ' + user.age + '\n Cidade: ' + user.city)
 }
 
+
 function loop(){
+    
+    let users = []
     let hi;
-    do{
+   
+    do{ 
         hi = sayHello();
         if(hi !== 'sim') break;
         
@@ -42,11 +46,19 @@ function loop(){
         let city = askCity();
         
         let user = criarUser(name, age, city);
+        users.push(user);
         show(user);
 
 
     }while(hi == 'sim')
 
+        function interar(){
+            for(i = 0; i < users.length; i ++)
+                console.log('Usuario numero: ' + (i + 1) + '\n Nome: ' + users[i].name + 
+            '\nAge: ' + users[i].age + '\nCity: ' + users[i].city)
+        }
+        interar()
+        
 }
 
 loop()
